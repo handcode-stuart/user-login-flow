@@ -42,6 +42,7 @@ const LoginForm = () => {
                                 value={data.email}
                                 placeholder='johnsmith@gmail.com'
                                 onChange={handleChange}
+                                required
                             />
                         </label>
                     </div>
@@ -55,9 +56,11 @@ const LoginForm = () => {
                                 value={data.password}
                                 placeholder='●●●●●●●●●●●●'
                                 onChange={handleChange}
+                                required
                             />
                         </label>
                     </div>
+                    {authContext.errors && <div className='errors'>Incorrect credentials</div>}
                     <div className='form-group  forgot-password'>
                         <Link to='/'>Forgot your password?</Link>
                     </div>

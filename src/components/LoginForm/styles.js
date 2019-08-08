@@ -46,6 +46,14 @@ export default styled.div`
             }
         }
 
+        .errors {
+            text-align: center;
+            color: red;
+            font-size: 12px;
+            padding: 0 14px;
+            margin-bottom: 20px;
+        }
+
         input {
             border: none;
             border-radius: 23px;

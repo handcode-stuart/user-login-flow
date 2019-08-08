@@ -1,9 +1,10 @@
 import React from "react";
+import FlashIcon from "../components/FlashIcon/FlashIcon";
 
 const Flash = () => {
     return (
         <div>
-            <h1>Flash</h1>
+            <FlashIcon />
         </div>
     );
 };

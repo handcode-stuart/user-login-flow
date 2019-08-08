@@ -1,6 +1,8 @@
 import React, {useState} from "react";
-import StyledTermsModal from "./styles";
 import PropTypes from "prop-types";
+
+import StyledTermsModal from "./styles";
+import Button from '../Button/Button';
 
 const TermsModal = ({ closeTermsModal }) => {
     const [extended, setExtended] = useState(false);
@@ -245,9 +247,9 @@ const TermsModal = ({ closeTermsModal }) => {
                     websites, plug-ins or applications.
                 </p>
             )}
-            <button onClick={() => setExtended(!extended)}>
+            <Button onClick={() => setExtended(!extended)}>
                 {extended ? "Shrink the full policy" : "View the full policy"}
-            </button>
+            </Button>
         </StyledTermsModal>
     );
 };

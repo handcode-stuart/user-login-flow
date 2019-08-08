@@ -40,9 +40,12 @@ export default styled.div`
 
                     input {
                         margin-right: 18px;
-                        transform: scale(1.8);
                     }
                 }
+            }
+
+            &.submit {
+                padding-top: 36px;
             }
         }
 
@@ -83,9 +86,8 @@ export default styled.div`
             }
 
             &[type="email"],
-            &[type="password"],
-            &[type="submit"] {
-                width: 285px;
+            &[type="password"] {
+                width: 100%;
                 height: 46px;
                 font-weight: 500;
                 font-size: 14px;
@@ -95,19 +97,11 @@ export default styled.div`
                     color: rgb(175, 182, 185);
                 }
             }
-
-            &[type="submit"] {
-                background-color: #ff0085;
-                color: #fff;
-                margin-top: 40px;
-                font-size: 14px;
-                font-weight: 700;
-                letter-spacing: 1px;
-            }
         }
 
         .tc-copy {
             font-size: 12px;
+            line-height: 20px;
 
             span {
                 color: #ff0085;

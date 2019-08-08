@@ -4,6 +4,7 @@ import { AuthContext } from "../../context/AuthContext";
 import StyledLoginForm from "./styles";
 import TermsModal from "../TermsModal/TermsModal";
 import Container from "../Container/Container";
+import Button from "../Button/Button";
 
 const LoginForm = () => {
     const authContext = useContext(AuthContext);
@@ -36,7 +37,7 @@ const LoginForm = () => {
             {termsModalStatus && <TermsModal closeTermsModal={() => setTermsModalStatus(false)} />}
             <StyledLoginForm>
                 <Container>
-                    <form onSubmit={handleSubmit}>
+                    <form>
                         <div className='form-group'>
                             <label htmlFor='email'>
                                 <span>Email address</span>
@@ -86,8 +87,8 @@ const LoginForm = () => {
                                 </div>
                             </label>
                         </div>
-                        <div className='form-group'>
-                            <input type='submit' value='Log in' />
+                        <div className='form-group  submit'>
+                            <Button onClick={e => handleSubmit(e)}>Log in</Button>
                         </div>
                     </form>
                 </Container>

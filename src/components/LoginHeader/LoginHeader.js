@@ -8,7 +8,7 @@ const LoginHeader = () => {
         <StyledLoginHeader>
             <Container>
                 <h1>Log in</h1>
-                <h4>Please log in with your email and password.</h4>
+                <h3>Please log in with your email and password.</h3>
             </Container>
         </StyledLoginHeader>
     );

@@ -21,12 +21,27 @@ export default createGlobalStyle`
     }
 
     h1 {
+        font-size: 32px;
+        line-height: 42px;
         font-weight: 300;
         margin-bottom: 10px;
     }
 
-    h4 {
+    h2 {
+        font-size: 26px;
+        line-height: 38px;
+        font-weight: 300;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 16px;
+        line-height: 26px;
         font-weight: 400;
         margin: 0;
+    }
+
+    p {
+        font-weight: 300;
     }
 `;

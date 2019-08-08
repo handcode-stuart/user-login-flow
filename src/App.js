@@ -1,22 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
+import { useFlashScreen } from "./hooks";
 import GlobalStyles from "./global-styles";
 import Login from "./pages/Login";
 import Flash from "./pages/Flash";
 
 const App = () => {
-    const [showFlash, setShowFlash] = useState(true);
-
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setShowFlash(false);
-        }, 3000);
-
-        return () => {
-            clearTimeout(timeout);
-        };
-    }, []);
+    const showFlash = useFlashScreen();
 
     return (
         <div>

@@ -15,14 +15,10 @@ export default styled.div`
     font-size: 16px;
     line-height: 1.5em;
 
-    span {
+    .cls-btn {
         position: fixed;
-        top: 20px;
+        top: 30px;
         right: 20px;
-        width: 40px;
-        height: 40px;
-        background-color: #000;
-        display: block;
     }
 
     .button-holder {

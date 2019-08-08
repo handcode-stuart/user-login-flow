@@ -88,7 +88,12 @@ const LoginForm = () => {
                             </label>
                         </div>
                         <div className='form-group  submit'>
-                            <Button onClick={e => handleSubmit(e)}>Log in</Button>
+                            <Button
+                                onClick={e => handleSubmit(e)}
+                                disabled={!data.tc_acknowledgment}
+                            >
+                                Log in
+                            </Button>
                         </div>
                     </form>
                 </Container>

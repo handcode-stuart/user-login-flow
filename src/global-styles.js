@@ -20,4 +20,18 @@ export default createGlobalStyle`
         -moz-osx-font-smoothing: grayscale;
         overflow: hidden;
     }
+
+    h1 {
+        font-size: 32px;
+        line-height: 42px;
+        font-weight: 300;
+        margin-bottom: 13px;
+    }
+
+    h4 {
+        font-weight: 400;
+        margin: 0;
+        font-size: 16px;
+        line-height: 26px;
+    }
 `;

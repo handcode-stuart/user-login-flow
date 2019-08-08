@@ -14,8 +14,10 @@ export default styled.button`
     opacity: 1;
     -webkit-transition: opacity 250ms ease-in-out;
     -moz-transition: opacity 250ms ease-in-out;
-    -o-transition: opacity 250ms ease-in-out;
     transition: opacity 250ms ease-in-out;
+    -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.12);
 
     &:disabled {
         opacity: 0.4;

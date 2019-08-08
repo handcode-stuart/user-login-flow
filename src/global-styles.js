@@ -14,7 +14,7 @@ export default createGlobalStyle`
         background-image: url('/images/background.svg');
         background-repeat: no-repeat;
         background-position: top right;
-        background-size: auto 100%;
+        background-size: auto;
         color: #FFF;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;

@@ -115,4 +115,26 @@ export default styled.div`
             }
         }
     }
+
+    .modal-display-enter {
+        opacity: 0;
+        margin-top: 40px;
+    }
+
+    .modal-display-enter-active {
+        margin-top: 0;
+        opacity: 1;
+        transition: all 350ms;
+    }
+
+    .modal-display-exit {
+        margin-top: 0;
+        opacity: 1;
+    }
+
+    .modal-display-exit-active {
+        margin-top: 40px;
+        opacity: 0;
+        transition: all 350ms;
+    }
 `;

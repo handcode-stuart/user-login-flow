@@ -24,4 +24,26 @@ export default styled.div`
     .button-holder {
         padding-top: 30px;
     }
+
+    .extra-content-display-enter {
+        max-height: 0;
+        opacity: 0;
+    }
+
+    .extra-content-display-enter-active {
+        opacity: 1;
+        max-height: 2000px;
+        transition: all 350ms;
+    }
+
+    .extra-content-display-exit {
+        opacity: 1;
+        max-height: 2000px;
+    }
+
+    .extra-content-display-exit-active {
+        opacity: 0;
+        max-height: 0;
+        transition: all 350ms;
+    }
 `;

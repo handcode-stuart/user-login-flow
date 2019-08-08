@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import { CSSTransition } from "react-transition-group";
 import StyledLoginForm from "./styles";
 import TermsModal from "../TermsModal/TermsModal";
 import Container from "../Container/Container";
@@ -33,72 +34,74 @@ const LoginForm = () => {
     };
 
     return (
-        <>
-            {termsModalStatus && <TermsModal closeTermsModal={() => setTermsModalStatus(false)} />}
-            <StyledLoginForm>
-                <Container>
-                    <form>
-                        <div className='form-group'>
-                            <label htmlFor='email'>
-                                <span>Email address</span>
-                                <br />
-                                <input
-                                    type='email'
-                                    name='email'
-                                    value={data.email}
-                                    placeholder='johnsmith@gmail.com'
-                                    onChange={handleChange}
-                                    required
-                                />
-                            </label>
-                        </div>
-                        <div className='form-group  password'>
-                            <label htmlFor='password'>
-                                <span>Password</span>
-                                <br />
-                                <input
-                                    type='password'
-                                    name='password'
-                                    value={data.password}
-                                    placeholder='●●●●●●●●●●●●'
-                                    onChange={handleChange}
-                                    required
-                                />
-                            </label>
-                        </div>
-                        {authContext.errors && <div className='errors'>Incorrect credentials</div>}
-                        <div className='form-group  forgot-password'>
-                            <Link to='/'>Forgot your password?</Link>
-                        </div>
-                        <div className='form-group  tc-acknowledgment'>
-                            <label htmlFor='tc_acknowledgment'>
-                                <input
-                                    type='checkbox'
-                                    name='tc_acknowledgment'
-                                    value={data.tc_acknowledgment}
-                                    onChange={handleTCChange}
-                                />
-                                <div className='tc-copy'>
-                                    You acknowledge that you have read the{" "}
-                                    <span>Privacy Policy</span> and that you agree to the{" "}
-                                    <span onClick={() => setTermsModalStatus(true)}>
-                                        Terms &amp; Conditions
-                                    </span>
-                                </div>
-                            </label>
-                        </div>
-                        <div className='form-group  submit'>
-                            <Button
-                                onClick={e => handleSubmit(e)}
-                                disabled={!data.tc_acknowledgment}
-                            >
-                                Log in
-                            </Button>
-                        </div>
-                    </form>
-                </Container>
-            </StyledLoginForm>
-        </>
+        <StyledLoginForm>
+            <CSSTransition
+                in={termsModalStatus}
+                timeout={350}
+                classNames='modal-display'
+                unmountOnExit
+            >
+                <TermsModal closeTermsModal={() => setTermsModalStatus(false)} />
+            </CSSTransition>
+            <Container>
+                <form>
+                    <div className='form-group'>
+                        <label htmlFor='email'>
+                            <span>Email address</span>
+                            <br />
+                            <input
+                                type='email'
+                                name='email'
+                                value={data.email}
+                                placeholder='johnsmith@gmail.com'
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
+                    </div>
+                    <div className='form-group  password'>
+                        <label htmlFor='password'>
+                            <span>Password</span>
+                            <br />
+                            <input
+                                type='password'
+                                name='password'
+                                value={data.password}
+                                placeholder='●●●●●●●●●●●●'
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
+                    </div>
+                    {authContext.errors && <div className='errors'>Incorrect credentials</div>}
+                    <div className='form-group  forgot-password'>
+                        <Link to='/'>Forgot your password?</Link>
+                    </div>
+                    <div className='form-group  tc-acknowledgment'>
+                        <label htmlFor='tc_acknowledgment'>
+                            <input
+                                type='checkbox'
+                                name='tc_acknowledgment'
+                                value={data.tc_acknowledgment}
+                                onChange={handleTCChange}
+                            />
+                            <div className='tc-copy'>
+                                You acknowledge that you have read the <span>Privacy Policy</span>{" "}
+                                and that you agree to the{" "}
+                                <span onClick={() => setTermsModalStatus(true)}>
+                                    Terms &amp; Conditions
+                                </span>
+                            </div>
+                        </label>
+                    </div>
+                    <div className='form-group  submit'>
+                        <Button onClick={e => handleSubmit(e)} disabled={!data.tc_acknowledgment}>
+                            Log in
+                        </Button>
+                    </div>
+                </form>
+            </Container>
+        </StyledLoginForm>
     );
 };
 

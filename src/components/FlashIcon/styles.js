@@ -2,10 +2,12 @@ import styled, { keyframes } from "styled-components";
 
 const animate = keyframes`
 from {
+    opacity: 0;
     transform: rotate(-20deg);
 }
 
 to {
+    opacity: 1;
     transform: rotate(0deg);
 }
 `;
@@ -18,6 +20,6 @@ export default styled.div`
     align-items: center;
 
     svg {
-        animation: ${animate} 2s forwards;
+        animation: ${animate} 3s forwards;
     }
 `;

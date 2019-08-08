@@ -1,5 +1,6 @@
 import React from "react";
 
+import guestRoute from "../components/guestRoute/guestRoute";
 import LoginForm from "../components/LoginForm/LoginForm";
 import LoginHeader from "../components/LoginHeader/LoginHeader";
 
@@ -12,4 +13,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default guestRoute(Login, "/getting-started");

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import StyledLoginForm from "./styles";
 import Container from "../Container/Container";
@@ -28,7 +28,7 @@ const LoginForm = () => {
         }
     };
 
-    return !authContext.auth ? (
+    return (
         <StyledLoginForm>
             <Container>
                 <form onSubmit={handleSubmit}>
@@ -81,8 +81,6 @@ const LoginForm = () => {
                 </form>
             </Container>
         </StyledLoginForm>
-    ) : (
-        <Redirect to='/getting-started' />
     );
 };
 

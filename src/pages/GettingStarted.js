@@ -1,4 +1,5 @@
 import React from "react";
+import authRoute from "../components/authRoute/authRoute";
 
 const GettingStarted = () => (
     <div>
@@ -6,4 +7,4 @@ const GettingStarted = () => (
     </div>
 );
 
-export default GettingStarted;
+export default authRoute(GettingStarted, "/");

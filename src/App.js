@@ -1,9 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { useFlashScreen } from "./hooks";
 import GlobalStyles from "./global-styles";
 import Login from "./pages/Login";
+import GettingStarted from "./pages/GettingStarted";
 import Flash from "./pages/Flash";
 
 const App = () => {
@@ -13,7 +14,19 @@ const App = () => {
         <div>
             <Router>
                 <GlobalStyles />
-                <Route path='/' render={() => (showFlash ? <Flash /> : <Login />)} />
+                <Route
+                    path='/'
+                    render={() =>
+                        showFlash ? (
+                            <Flash />
+                        ) : (
+                            <Switch>
+                                <Route exact path='/' component={Login} />
+                                <Route path='/getting-started' component={GettingStarted} />
+                            </Switch>
+                        )
+                    }
+                />
             </Router>
         </div>
     );

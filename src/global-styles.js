@@ -24,7 +24,7 @@ export default createGlobalStyle`
         font-size: 32px;
         line-height: 42px;
         font-weight: 300;
-        margin-bottom: 10px;
+        margin: 0 0 10px;
     }
 
     h2 {

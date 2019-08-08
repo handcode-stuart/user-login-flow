@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { useFlashScreen } from "./hooks";
+import { AuthProvider } from "./context/AuthContext";
 import GlobalStyles from "./global-styles";
 import Login from "./pages/Login";
 import GettingStarted from "./pages/GettingStarted";
@@ -11,7 +12,7 @@ const App = () => {
     const showFlash = useFlashScreen();
 
     return (
-        <div>
+        <AuthProvider>
             <Router>
                 <GlobalStyles />
                 <Route
@@ -28,7 +29,7 @@ const App = () => {
                     }
                 />
             </Router>
-        </div>
+        </AuthProvider>
     );
 };
 

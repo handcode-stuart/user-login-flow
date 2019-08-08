@@ -1,9 +1,12 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link, Redirect } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 import StyledLoginForm from "./styles";
 import Container from "../Container/Container";
 
 const LoginForm = () => {
+    const authContext = useContext(AuthContext);
+
     const [data, setData] = useState({
         email: "",
         password: "",
@@ -20,9 +23,12 @@ const LoginForm = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        if (data.tc_acknowledgment) {
+            authContext.authenticateUser({ email: data.email, password: data.password });
+        }
     };
 
-    return (
+    return !authContext.auth ? (
         <StyledLoginForm>
             <Container>
                 <form onSubmit={handleSubmit}>
@@ -75,6 +81,8 @@ const LoginForm = () => {
                 </form>
             </Container>
         </StyledLoginForm>
+    ) : (
+        <Redirect to='/getting-started' />
     );
 };
 

@@ -14,23 +14,20 @@ export default createGlobalStyle`
         background-image: url('/images/background.svg');
         background-repeat: no-repeat;
         background-position: top right;
-        background-size: auto;
+        background-size: auto 100%;
         color: #FFF;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        overflow: hidden;
     }
 
     h1 {
-        font-size: 32px;
-        line-height: 42px;
         font-weight: 300;
-        margin-bottom: 13px;
+        margin-bottom: 10px;
     }
 
     h4 {
         font-weight: 400;
         margin: 0;
-        font-size: 16px;
-        line-height: 26px;
     }
 `;

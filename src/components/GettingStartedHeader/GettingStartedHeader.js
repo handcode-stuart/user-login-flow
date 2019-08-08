@@ -6,9 +6,12 @@ import Container from "../Container/Container";
 const GettingStartedHeader = () => {
     return (
         <StyledGettingStartedHeader>
+            <div className='bg' />
             <Container>
-                <h1>Let's get started!</h1>
-                <h3>Enter your address</h3>
+                <div className='content'>
+                    <h1>Let's get started!</h1>
+                    <h3>Enter your address</h3>
+                </div>
             </Container>
         </StyledGettingStartedHeader>
     );

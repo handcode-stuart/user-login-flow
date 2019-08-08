@@ -30,7 +30,7 @@ export default styled.div`
 
             &[type="text"] {
                 padding: 0 18px;
-                border: 1px solid rgb(175, 182, 185);
+                border: 1px solid #dadcdd;
                 transition: border-color 250ms ease-in-out, box-shadow 250ms ease-in-out;
                 -moz-transition: border-color 250ms ease-in-out, box-shadow 250ms ease-in-out;
                 -webkit-transition: border-color 250ms ease-in-out, box-shadow 250ms ease-in-out;

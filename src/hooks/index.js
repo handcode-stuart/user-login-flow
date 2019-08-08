@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
-export const useFlashScreen = () => {
-    const [showFlash, setShowFlash] = useState(true);
+export const useSplashScreen = () => {
+    const [showSplash, setShowSplash] = useState(true);
 
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setShowFlash(false);
+            setShowSplash(false);
         }, 5000);
 
         return () => {
@@ -13,5 +13,5 @@ export const useFlashScreen = () => {
         };
     }, []);
 
-    return showFlash;
+    return showSplash;
 };

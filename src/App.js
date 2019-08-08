@@ -1,15 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import { useFlashScreen } from "./hooks";
+import { useSplashScreen } from "./hooks";
 import { AuthProvider } from "./context/AuthContext";
 import GlobalStyles from "./global-styles";
 import Login from "./pages/Login";
 import GettingStarted from "./pages/GettingStarted";
-import Flash from "./pages/Flash";
+import Splash from "./pages/Splash";
 
 const App = () => {
-    const showFlash = useFlashScreen();
+    const showSplash = useSplashScreen();
 
     return (
         <AuthProvider>
@@ -18,8 +18,8 @@ const App = () => {
                 <Route
                     path='/'
                     render={() =>
-                        showFlash ? (
-                            <Flash />
+                        showSplash ? (
+                            <Splash />
                         ) : (
                             <Switch>
                                 <Route exact path='/' component={Login} />

@@ -6,7 +6,7 @@ export const useFlashScreen = () => {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setShowFlash(false);
-        }, 500);
+        }, 5000);
 
         return () => {
             clearTimeout(timeout);

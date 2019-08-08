@@ -7,7 +7,7 @@ const AuthProvider = ({ children }) => {
 
     const [errors, setErrors] = useState(false);
 
-    const email = "johndoe@example.com";
+    const email = "johnsmith@gmail.com";
     const password = "password";
 
     const authenticateUser = formData => {

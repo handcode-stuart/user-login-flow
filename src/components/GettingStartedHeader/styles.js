@@ -15,7 +15,10 @@ export default styled.header`
         width: 100%;
         height: 225px;
         border-radius: 0 0 50% 50% / 10%;
-        background: #a43091;
+        background: #971d8d;
+        background: -moz-linear-gradient(45deg, #971d8d 0%, #b31688 100%);
+        background: -webkit-linear-gradient(45deg, #971d8d 0%, #b31688 100%);
+        background: linear-gradient(45deg, #971d8d 0%, #b31688 100%);
     }
 
     .content {

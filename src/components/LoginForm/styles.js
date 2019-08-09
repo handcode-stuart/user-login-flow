@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export default styled.div`
-    padding-bottom: 143px;
-
     form {
         label {
             text-align: left;
